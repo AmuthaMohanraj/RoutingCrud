@@ -1,0 +1,63 @@
+<h2>Company</h2>
+  
+<table class="table">
+    <thead>
+      <th>company_id</th>
+      <th>company_name</th>
+      <th>industry</th>
+      <th>address</th>
+      <th>city</th>
+      <th>state_province</th>
+      <th>country</th>
+      <th>phone_number</th>
+      <!-- <th>email</th>
+      <th>website</th>
+      <th>ceo_owner</th>
+      <th>year_founded</th>
+      <th>revenue</th>
+      <th>employee_count</th>
+      <th>description</th> -->
+      <th>Action</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let a of data" (click)="getAboutCompanyDetails(a.company_id)">
+            <td>{{a.company_id}}</td>
+            <td>{{a.company_name}}</td>
+            <td>{{a.industry}}</td>
+            <td>{{a.address}}</td>
+            <td>{{a.city}}</td>
+            <td>{{a.state_province}}</td>
+            <td>{{a.country}}</td>
+            <td>{{a.phone_number}}</td>
+            <!-- <td>{{a.email}}</td>
+            <td>{{a.website}}</td>
+            <td>{{a.ceo_owner}}</td>
+            <td>{{a.year_founded}}</td>
+            <td>{{a.revenue}}</td>
+            <td>{{a.employee_count}}</td>
+            <td>{{a.description}}</td> -->
+            <td>
+                <span class="action-icon mx-3">
+                  <i class="fas fa-edit"></i>
+                </span>
+                <span class="action-icon me-3">
+                  <i class="fas fa-trash-alt"></i>
+                </span>
+              </td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- <a routerLink="/aboutcompany">AboutCompany</a> -->
+
+
+
+
+
+
+
+
+
+
+
+

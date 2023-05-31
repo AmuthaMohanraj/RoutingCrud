@@ -1,0 +1,20 @@
+table{
+
+    th {
+        background-color: black;
+        color: white;
+        padding: 20px 0px;
+      }
+
+      tr:nth-child(even) {
+        background-color:silver;
+      }
+
+      tr{
+        cursor:pointer;
+      }
+}
+
+  
+  
+  
