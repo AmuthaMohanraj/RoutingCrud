@@ -1,8 +1,9 @@
 import { Injectable,OnInit } from '@angular/core';
 import {HttpClient}  from '@angular/common/http'
 import { BoundElementProperty } from '@angular/compiler';
-import {Icreatecompany,Icreateemployee,Icompany, Iemployee } from './app.component';
+import {Icreatecompany,Icreateemployee,Icompany, Iemployee, Ideletemployee } from './app.component';
 import { Idelelecompany } from './app.component';
+import { __makeTemplateObject } from 'tslib';
 
 @Injectable({
   providedIn: 'root'
@@ -65,5 +66,14 @@ export class ServiceService implements OnInit{
     return this.http.post(this.url, body);
   }
   
+  updateEmployeeList(body:Iemployee){
+    this.url='http://localhost:3000/updateEmployeeList'
+    return this.http.put(this.url,body)
+  }
+
+  deleteEmployeeList(body:Ideletemployee){
+    this.url='http://localhost:3000/deleteEmployeeList'
+    return this.http.put(this.url,body)
+  }
   
 }

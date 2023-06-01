@@ -6,7 +6,8 @@
     <li>{{a.last_name}}</li>
     <li>{{a.email}}</li>
     <li>{{a.phone_number}}</li>
-    <li>{{a.hire_date}}</li>
+    <!-- <li>{{a.hire_date}}</li> -->
+    <li>{{ formatDate(a.hire_date) }}</li> <!-- Call the formatDate function -->
     <li>{{a.job_title}}</li>
     <li>{{a.department}}</li>
     <li>{{a.salary}}</li>

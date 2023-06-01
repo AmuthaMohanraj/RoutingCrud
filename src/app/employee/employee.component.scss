@@ -24,22 +24,22 @@ form{
     }
   }
   
-  button.btn-primary {
+  button.btn-primary,.btn-success {
     display: inline-block;
     padding: 10px 20px;
     font-size: 16px;
     font-weight: bold;
     text-align: center;
     color: #fff;
-    background-color: #007bff;
+    // background-color: #007bff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
   
-    &:hover {
-      background-color: #0056b3;
-    }
+    // &:hover {
+    //   background-color: #0056b3;
+    // }
   }
   
 }

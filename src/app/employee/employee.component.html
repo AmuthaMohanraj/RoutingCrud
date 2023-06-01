@@ -26,7 +26,7 @@
             <span class="action-icon mx-3" (click)="editEmployee(a.employee_id)">
               <i class="fas fa-edit"></i>
             </span>
-            <span class="action-icon me-3">
+            <span class="action-icon me-3" (click)="deleteEmployeeList(a.employee_id)">
               <i class="fas fa-trash-alt"></i>
             </span>
           </td>
@@ -82,7 +82,11 @@
     <input type="text" class="form-control" [(ngModel)]="payRollBody.manager_id" id="manager_id" name="manager_id">
   </div>
 
-  <button type="submit" (click)="createEmployeeList()" class="btn btn-primary">Submit</button>
+  <div>
+  <button type="submit" (click)="createEmployeeList()" class="btn btn-success mx-3">Submit</button>
+  <button type="submit" (click)="updateEmployeeList()" class="btn btn-primary">Update</button>
+  </div>
+  
 </form>
 
 

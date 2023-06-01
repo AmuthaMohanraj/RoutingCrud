@@ -23,6 +23,14 @@ constructor(private sObj:ServiceService,public activeRoute:ActivatedRoute)
     this.data=data;
   })
   }
-
+  
+  formatDate(dateString: string): string {
+    const date = new Date(dateString);
+    const day = date.getDate();
+    const month = date.getMonth() + 1; // Months are zero-based
+    const year = date.getFullYear();
+    
+    return `${day}/${month}/${year}`;
+  } 
   
 }
