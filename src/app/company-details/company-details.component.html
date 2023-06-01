@@ -1,6 +1,5 @@
 <h2>company-details</h2>
 
-
 <ul *ngFor="let i of data">
     <li>{{i.company_id}}</li>
     <li>{{i.company_name}}</li>
@@ -29,60 +28,65 @@
 <form class="company-form">
     <div class="form-group">
       <label for="company_name">Company Name</label>
-      <input type="text" class="form-control" id="company_name" name="company_name">
+      <input type="text" class="form-control" [(ngModel)]="payrollBody.company_name" id="company_name" name="company_name">
     </div>
     <div class="form-group">
       <label for="industry">Industry</label>
-      <input type="text" class="form-control" id="industry" name="industry">
+      <input type="text" class="form-control" [(ngModel)]="payrollBody.industry" id="industry" name="industry">
     </div>
     <div class="form-group">
       <label for="address">Address</label>
-      <input type="text" class="form-control" id="address" name="address">
+      <input type="text" class="form-control" [(ngModel)]="payrollBody.address" id="address" name="address">
     </div>
     <div class="form-group">
       <label for="city">City</label>
-      <input type="text" class="form-control" id="city" name="city">
+      <input type="text" class="form-control" [(ngModel)]="payrollBody.city" id="city" name="city">
     </div>
     <div class="form-group">
       <label for="state_province">State/Province</label>
-      <input type="text" class="form-control" id="state_province" name="state_province">
+      <input type="text" class="form-control" [(ngModel)]="payrollBody.state_province" id="state_province" name="state_province">
     </div>
     <div class="form-group">
       <label for="country">Country</label>
-      <input type="text" class="form-control" id="country" name="country">
+      <input type="text" class="form-control" [(ngModel)]="payrollBody.country" id="country" name="country">
     </div>
     <div class="form-group">
       <label for="phone_number">Phone Number</label>
-      <input type="text" class="form-control" id="phone_number" name="phone_number">
+      <input type="text" class="form-control" [(ngModel)]="payrollBody.phone_number" id="phone_number" name="phone_number">
     </div>
     <div class="form-group">
       <label for="email">Email</label>
-      <input type="email" class="form-control" id="email" name="email">
+      <input type="email" class="form-control" [(ngModel)]="payrollBody.email" id="email" name="email">
     </div>
     <div class="form-group">
       <label for="website">Website</label>
-      <input type="text" class="form-control" id="website" name="website">
+      <input type="text" class="form-control" [(ngModel)]="payrollBody.website" id="website" name="website">
     </div>
     <div class="form-group">
       <label for="ceo_owner">CEO/Owner</label>
-      <input type="text" class="form-control" id="ceo_owner" name="ceo_owner">
+      <input type="text" class="form-control" [(ngModel)]="payrollBody.ceo_owner" id="ceo_owner" name="ceo_owner">
     </div>
     <div class="form-group">
       <label for="year_founded">Year Founded</label>
-      <input type="text" class="form-control" id="year_founded" name="year_founded">
+      <input type="text" class="form-control" [(ngModel)]="payrollBody.year_founded" id="year_founded" name="year_founded">
     </div>
     <div class="form-group">
       <label for="revenue">Revenue</label>
-      <input type="text" class="form-control" id="revenue" name="revenue">
+      <input type="text" class="form-control" [(ngModel)]="payrollBody.revenue" id="revenue" name="revenue">
     </div>
     <div class="form-group">
       <label for="employee_count">Employee Count</label>
-      <input type="text" class="form-control" id="employee_count" name="employee_count">
+      <input type="text" class="form-control" [(ngModel)]="payrollBody.employee_count" id="employee_count" name="employee_count">
     </div>
     <div class="form-group">
       <label for="description">Description</label>
-      <textarea class="form-control" id="description" name="description"></textarea>
+      <textarea class="form-control" [(ngModel)]="payrollBody.description" id="description" name="description"></textarea>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+
+    <div>
+      <button type="submit" (click)="createItemsCompany()" class="btn btn-success mx-3">Submit</button>
+      <button type="submit" (click)="updateCompanyItem()" class="btn btn-primary">Edit</button>
+    </div>
+   
+
   </form>
-  

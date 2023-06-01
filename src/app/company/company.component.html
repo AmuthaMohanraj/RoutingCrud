@@ -20,9 +20,9 @@
       <th>Action</th>
     </thead>
     <tbody>
-        <tr *ngFor="let a of data" (click)="getAboutCompanyDetails(a.company_id)">
+        <tr *ngFor="let a of data">
             <td>{{a.company_id}}</td>
-            <td>{{a.company_name}}</td>
+            <td (click)="getAboutCompanyDetails(a.company_id)">{{a.company_name}}</td>
             <td>{{a.industry}}</td>
             <td>{{a.address}}</td>
             <td>{{a.city}}</td>
@@ -37,10 +37,10 @@
             <td>{{a.employee_count}}</td>
             <td>{{a.description}}</td> -->
             <td>
-                <span class="action-icon mx-3">
+                <span class="action-icon mx-3" (click)="getAboutCompanyDetails(a.company_id)">
                   <i class="fas fa-edit"></i>
                 </span>
-                <span class="action-icon me-3">
+                <span class="action-icon me-3" (click)="deleteCompanyList(a.company_id)">
                   <i class="fas fa-trash-alt"></i>
                 </span>
               </td>
