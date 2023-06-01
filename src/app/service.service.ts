@@ -1,7 +1,7 @@
 import { Injectable,OnInit } from '@angular/core';
 import {HttpClient}  from '@angular/common/http'
 import { BoundElementProperty } from '@angular/compiler';
-import { Icreatecompany } from './app.component';
+import {Icreatecompany,Icreateemployee,Icompany, Iemployee } from './app.component';
 import { Idelelecompany } from './app.component';
 
 @Injectable({
@@ -30,34 +30,40 @@ export class ServiceService implements OnInit{
   }
 
   //createCompanyList
-  createCompanyList(body:Icreatecompany){
+  createCompanyList(body:Icompany){
     this.url='http://localhost:3000/createCompanyList'
     return this.http.post(this.url,body)
   }
 
 //updateCompanyList
   updateCompanyList(body:Icreatecompany){
-    this.url='http://localhost:3000/updateUser'
+    this.url='http://localhost:3000/updateCompanyList'
     return this.http.put(this.url,body)
   }
 
   // deleteCompanyList
   deleteCompany(body:Idelelecompany){
-    this.url='http://localhost:3000/deleteUser'
+    this.url='http://localhost:3000/deleteCompanyList'
     return this.http.put(this.url,body)
   }
-
 
 //employeeData 
   getEmployeeDetails(){
     this.url='http://localhost:3000/employee';
     return this.http.get(this.url)
   }
-
-
-  getEmployeeById(id:string|null){
+ 
+  // employeeById
+  getEmployeeById(id:number){
     this.url='http://localhost:3000/getEmployeeById/'
     return this.http.get(this.url+id)
   }
 
+  // createEmployeeList
+  createEmployeeList(body: Iemployee) {
+    this.url = 'http://localhost:3000/createEmployeeList';
+    return this.http.post(this.url, body);
+  }
+  
+  
 }

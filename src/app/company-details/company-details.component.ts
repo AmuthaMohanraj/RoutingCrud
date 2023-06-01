@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceService } from '../service.service';
 import { ActivatedRoute } from '@angular/router';
-import { Icompany, Icreatecompany } from '../app.component';
+import { Icompany} from '../app.component';
 
 @Component({
   selector: 'app-company-details',
@@ -13,7 +13,7 @@ export class CompanyDetailsComponent implements OnInit {
   data: Icompany[] = []
 
   payrollBody: Icompany = {
-    company_id:0,
+    company_id:0,  //it declard for only edit pupose it's not using create data
     company_name: '',
     industry: '',
     address: '',
@@ -40,23 +40,23 @@ export class CompanyDetailsComponent implements OnInit {
       this.data = data;
       console.log(this.data);
     
-      this.payrollBody = {
-        company_id:data[0].company_id,
-        company_name: data[0].company_name,
-        industry: data[0].industry,
-        address: data[0].address,
-        city: data[0].city,
-        state_province: data[0].state_province,
-        country: data[0].country,
-        phone_number: data[0].phone_number,
-        email: data[0].email,
-        website: data[0].website,
-        ceo_owner: data[0].ceo_owner,
-        year_founded: data[0].year_founded,
-        revenue: data[0].revenue,
-        employee_count: data[0].employee_count,
-        description: data[0].description
-      };
+      // this.payrollBody = {
+      //   company_id:data[0].company_id,
+      //   company_name: data[0].company_name,
+      //   industry: data[0].industry,
+      //   address: data[0].address,
+      //   city: data[0].city,
+      //   state_province: data[0].state_province,
+      //   country: data[0].country,
+      //   phone_number: data[0].phone_number,
+      //   email: data[0].email,
+      //   website: data[0].website,
+      //   ceo_owner: data[0].ceo_owner,
+      //   year_founded: data[0].year_founded,
+      //   revenue: data[0].revenue,
+      //   employee_count: data[0].employee_count,
+      //   description: data[0].description
+      // };
     
       console.log(this.payrollBody, 'payrollvalue');
     });

@@ -16,9 +16,8 @@ constructor(private sObj:ServiceService,public activeRoute:ActivatedRoute)
 
 }
 
-
   ngOnInit(): void {
-   let id:string|null=this.activeRoute.snapshot.paramMap.get('id')
+  let id: number = Number(this.activeRoute.snapshot.paramMap.get('id'));
    console.log(id);
   this.sObj.getEmployeeById(id).subscribe((data:any)=>{
     this.data=data;

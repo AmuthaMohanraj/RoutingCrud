@@ -14,16 +14,16 @@
         </tr>   
     </thead>
     <tbody>
-        <tr *ngFor="let a of data" (click)="getAboutEmployeeDetails(a.employee_id)">
+        <tr *ngFor="let a of data">
           <td>{{a.employee_id}}</td>
-          <td>{{a.first_name}}</td>
+          <td (click)="getAboutEmployeeDetails(a.employee_id)">{{a.first_name}}</td>
           <td>{{a.last_name}}</td>
           <td>{{a.email}}</td>
           <td>{{a.phone_number}}</td>
           <td>{{a.department}}</td>
           <td>{{a.manager_id}}</td>
           <td>
-            <span class="action-icon mx-3">
+            <span class="action-icon mx-3" (click)="editEmployee(a.employee_id)">
               <i class="fas fa-edit"></i>
             </span>
             <span class="action-icon me-3">
@@ -35,9 +35,55 @@
 </table>
 
 
+<h2>Create New Employee List</h2>
+<form>
+  <div class="form-group">
+    <label for="first_name">First Name</label>
+    <input type="text" class="form-control" [(ngModel)]="payRollBody.first_name" id="first_name" name="first_name">
+  </div>
 
+  <div class="form-group">
+    <label for="last_name">Last Name</label>
+    <input type="text" class="form-control" [(ngModel)]="payRollBody.last_name" id="last_name" name="last_name">
+  </div>
 
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" [(ngModel)]="payRollBody.email" id="email" name="email">
+  </div>
 
+  <div class="form-group">
+    <label for="phone_number">Phone Number</label>
+    <input type="text" class="form-control" [(ngModel)]="payRollBody.phone_number" id="phone_number" name="phone_number">
+  </div>
+
+  <div class="form-group">
+    <label for="hire_date">Hire Date</label>
+    <input type="date" class="form-control" [(ngModel)]="payRollBody.hire_date" id="hire_date" name="hire_date">
+  </div>
+
+  <div class="form-group">
+    <label for="job_title">Job Title</label>
+    <input type="text" class="form-control" [(ngModel)]="payRollBody.job_title" id="job_title" name="job_title">
+  </div>
+
+  <div class="form-group">
+    <label for="department">Department</label>
+    <input type="text" class="form-control" [(ngModel)]="payRollBody.department" id="department" name="department">
+  </div>
+
+  <div class="form-group">
+    <label for="salary">Salary</label>
+    <input type="text" class="form-control" [(ngModel)]="payRollBody.salary" id="salary" name="salary">
+  </div>
+
+  <div class="form-group">
+    <label for="manager_id">Manager ID</label>
+    <input type="text" class="form-control" [(ngModel)]="payRollBody.manager_id" id="manager_id" name="manager_id">
+  </div>
+
+  <button type="submit" (click)="createEmployeeList()" class="btn btn-primary">Submit</button>
+</form>
 
 
 

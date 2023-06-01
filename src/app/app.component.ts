@@ -32,7 +32,7 @@ export interface Icompany{
   
   // get
   export interface Iemployee{
-    employee_id:string,
+    employee_id:number,
     first_name:string,
     last_name:string,
     email:string,
